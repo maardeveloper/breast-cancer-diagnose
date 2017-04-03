@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-
+import { NetworkService } from './services/network.service';
 declare var synaptic: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  providers: [NetworkService],
   styleUrls: ['./app.component.css']
 })
 
@@ -13,8 +14,23 @@ export class AppComponent {
   perceptron = null;
   outputs = [];
   results:any;
+  trainingNetwork:any;
 
-  constructor() {
+  constructor(private _network: NetworkService) {
+  }
+
+  getTrainJSON() {
+    this._network.getTrainingData().then((response) => {
+      this.trainingNetwork = response;
+      console.log(response);
+    }).catch((error) => console.log(error));
+  }
+
+  getTestJSON() {
+    this._network.getTestData().then((response) => {
+      this.trainingNetwork = response;
+      console.log(response);
+    }).catch((error) => console.log(error));
   }
 
   train(){
