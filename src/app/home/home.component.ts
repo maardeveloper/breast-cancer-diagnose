@@ -485,7 +485,7 @@ export class HomeComponent implements OnInit {
     console.log(this.neuralNet.activate(TESTING_SET[7].input), 'otra wea~input');
     console.log(TESTING_SET[7].output, 'otra wea~output');
   }
-
+  
   doesHasCancer(valueActivated:number) {
     valueActivated > 0.75 ? this.answer = 'you have cancer' : this.answer = 'you dont have cancer';
   }
