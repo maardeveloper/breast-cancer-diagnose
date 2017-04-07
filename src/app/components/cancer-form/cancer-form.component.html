@@ -1,0 +1,15 @@
+<div class="cancer-form">
+  <h1>Cancer form</h1>
+  <form #f="ngForm" (ngSubmit)="submitForm(f)" class="">
+    <input [(ngModel)]="cancerForm.cT" type="number" placeholder="Clump Thickness" name="cT">
+    <input [(ngModel)]="cancerForm.uCSi" type="number" placeholder="Uniformity of Cell Size" name="uCSi">
+    <input [(ngModel)]="cancerForm.uCSh" type="number" placeholder="Uniformity of Cell Shape" name="uCSh">
+    <input [(ngModel)]="cancerForm.mA" type="number" placeholder="Marginal Adhesion" name="mA">
+    <input [(ngModel)]="cancerForm.sECS" type="number" placeholder="Single Epithelial Cell Size" name="sECS">
+    <input [(ngModel)]="cancerForm.bN" type="number" placeholder="Bare Nuclei" name="bN">
+    <input [(ngModel)]="cancerForm.bC" type="number" placeholder="Bland Chromatin" name="bC">
+    <input [(ngModel)]="cancerForm.nN" type="number" placeholder="Normal Nucleoli" name="nN">
+    <input [(ngModel)]="cancerForm.m" type="number" placeholder="Mitoses" name="m">
+    <button type="submit" name="button">Go!</button>
+  </form>
+</div>

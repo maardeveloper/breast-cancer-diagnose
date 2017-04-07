@@ -35,6 +35,9 @@ export class HomeComponent implements OnInit {
   hiddenLayer: any;
   outputLayer:any;
 
+  hasCancer: boolean;
+  answer: string;
+
   constructor(private _network: NetworkService) {
 
     const TRAINING_SET =
@@ -478,8 +481,19 @@ export class HomeComponent implements OnInit {
       cost: synaptic.Trainer.cost.CROSS_ENTROPY
     });
 
-    console.log(this.neuralNet.activate(TESTING_SET[0].input), 'otra wea~input');
-    console.log(TESTING_SET[0].output, 'otra wea~output');
+    console.log('este men es el checado test', TESTING_SET[7].input);
+    console.log(this.neuralNet.activate(TESTING_SET[7].input), 'otra wea~input');
+    console.log(TESTING_SET[7].output, 'otra wea~output');
+  }
+
+  doesHasCancer(valueActivated:number) {
+    valueActivated > 0.75 ? this.answer = 'you have cancer' : this.answer = 'you dont have cancer';
+  }
+
+  activateFormInputs(formValues) {
+    console.log(formValues, 'awewe from home');
+    console.log(this.neuralNet.activate(formValues), 'Este es tu resultado chavo');
+    this.doesHasCancer(this.neuralNet.activate(formValues));
   }
 
   getTrainJSON() {
