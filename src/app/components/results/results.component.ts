@@ -55,8 +55,7 @@ export class ResultsComponent implements OnInit {
   }
 
   calculateXPositionResult(result) {
-    let xposition: number = 0;
-    console.log('este input lel', result);
+    let xposition: number = 0;    
     for(let value of result) {
       xposition = xposition + value;
     }

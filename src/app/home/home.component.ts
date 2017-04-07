@@ -485,7 +485,7 @@ export class HomeComponent implements OnInit {
       shuffle: true,
       log: 1,
       cost: synaptic.Trainer.cost.CROSS_ENTROPY
-    });    
+    });
   }
 
   doesHasCancer(valueActivated:number) {
@@ -500,8 +500,6 @@ export class HomeComponent implements OnInit {
   }
 
   activateFormInputs(formValues) {
-    console.log(formValues, 'awewe from home');
-    console.log(this.neuralNet.activate(formValues), 'Este es tu resultado chavo');
     this.cancerResult = this.neuralNet.activate(formValues);
     this.resultsComponent.pushTheResult(formValues);
     this.doesHasCancer(this.neuralNet.activate(formValues));
@@ -515,8 +513,7 @@ export class HomeComponent implements OnInit {
 
   getTestJSON() {
     this._network.getTestData().then((response) => {
-      this.testNetworkArray = response;
-      console.log(response);
+      this.testNetworkArray = response;      
     }).catch((error) => console.log(error));
   }
 
