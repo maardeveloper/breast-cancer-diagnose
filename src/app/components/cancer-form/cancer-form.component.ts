@@ -40,10 +40,15 @@ export class CancerFormComponent implements OnInit {
     return binarizedArray;
   }
 
-  submitForm(formData) {
-    let arrayData = [formData.value.cT, formData.value.uCSi, formData.value.uCSh, formData.value.mA, formData.value.sECS, formData.value.bN, formData.value.bC, formData.value.nN, formData.value.m];
+  submitForm() {
+    let arrayData = [
+      this.cancerForm.controls['cT'].value, this.cancerForm.controls['uCSi'].value,
+      this.cancerForm.controls['uCSh'].value, this.cancerForm.controls['mA'].value,
+      this.cancerForm.controls['sECS'].value, this.cancerForm.controls['bN'].value,
+      this.cancerForm.controls['bC'].value, this.cancerForm.controls['nN'].value,
+      this.cancerForm.controls['m'].value
+    ];
     arrayData = this.binarizeData(arrayData);
-    console.log(arrayData);
     this.formValue.emit(arrayData);
   }
 

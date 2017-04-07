@@ -7,14 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HomeComponent } from './home/home.component';
 import { CancerFormComponent } from './components/cancer-form/cancer-form.component';
+import { ResultsComponent } from './components/results/results.component';
 
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CancerFormComponent
+    CancerFormComponent,
+    ResultsComponent
   ],
   imports: [
     AppRoutingModule,
