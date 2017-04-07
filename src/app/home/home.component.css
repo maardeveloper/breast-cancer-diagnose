@@ -12,6 +12,16 @@
   justify-content: center;
 }
 
+.description {
+  width: 50%;
+  background-color: rgba(0,0,0,0.25);
+  color: white;
+}
+
+.description > .titulo {
+  font-size: 2em;
+}
+
 .inside-container {
   width: 100%;
   height: 100%;
@@ -19,5 +29,5 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }

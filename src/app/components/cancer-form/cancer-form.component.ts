@@ -49,9 +49,7 @@ export class CancerFormComponent implements OnInit {
       this.cancerForm.controls['m'].value
     ];
     arrayData = this.binarizeData(arrayData);
-    console.log(arrayData);
     this.formValue.emit(arrayData);
-    console.log('lel');
   }
 
   ngOnInit() {

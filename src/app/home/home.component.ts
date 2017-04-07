@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NetworkService } from '../services/network.service';
 
 declare var synaptic: any;
@@ -10,6 +10,8 @@ declare var synaptic: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('resultsComponent') resultsComponent;
 
   perceptron = null;
   outputs = [];
@@ -35,8 +37,13 @@ export class HomeComponent implements OnInit {
   hiddenLayer: any;
   outputLayer:any;
 
+  toggleView: boolean = false;
+
   hasCancer: boolean;
+  cancerPercentage: number;
   answer: string;
+
+  cancerResult:any;
 
   constructor(private _network: NetworkService) {
 
@@ -447,7 +454,6 @@ export class HomeComponent implements OnInit {
         }
       ];
 
-    console.log(TRAINING_SET);
     this.xTest = [];
     this.yTest = [];
     this.inputLayerSize = 9;
@@ -479,27 +485,31 @@ export class HomeComponent implements OnInit {
       shuffle: true,
       log: 1,
       cost: synaptic.Trainer.cost.CROSS_ENTROPY
-    });
-
-    console.log('este men es el checado test', TESTING_SET[7].input);
-    console.log(this.neuralNet.activate(TESTING_SET[7].input), 'otra wea~input');
-    console.log(TESTING_SET[7].output, 'otra wea~output');
+    });    
   }
-  
+
   doesHasCancer(valueActivated:number) {
-    valueActivated > 0.75 ? this.answer = 'you have cancer' : this.answer = 'you dont have cancer';
+    valueActivated > 0.75 ? this.answer = '!!!!!Tienes una alta probabilidad de cancer de mama, ve al doctor!!!!!'
+                          : this.answer = 'Tienes una baja probabilidad de cancer de mama, descuida :)';
+    this.cancerPercentage = valueActivated;
+    this.toggleViewAction();
+  }
+
+  toggleViewAction() {
+    this.toggleView = !this.toggleView;
   }
 
   activateFormInputs(formValues) {
     console.log(formValues, 'awewe from home');
     console.log(this.neuralNet.activate(formValues), 'Este es tu resultado chavo');
+    this.cancerResult = this.neuralNet.activate(formValues);
+    this.resultsComponent.pushTheResult(formValues);
     this.doesHasCancer(this.neuralNet.activate(formValues));
   }
 
   getTrainJSON() {
     this._network.getTrainingData().then((response) => {
       this.trainingNetworkArray = response;
-      console.log(response);
     }).catch((error) => console.log(error));
   }
 
@@ -525,7 +535,6 @@ export class HomeComponent implements OnInit {
       pushStuff['FIELD10'] = instance['FIELD10'];
       this.xTest.push(pushStuff);
     }
-    console.log(this.xTest, 'xtest');
   }
 
   fillyTest(){
@@ -534,7 +543,6 @@ export class HomeComponent implements OnInit {
       pushStuff['FIELD11'] = instance['FIELD11'];
       this.yTest.push(pushStuff);
     }
-    console.log(this.yTest, 'ytest');
   }
 
   binarizeOutput() {
@@ -546,7 +554,6 @@ export class HomeComponent implements OnInit {
         instance['FIELD11'] = 1
       }
     }
-    console.log(this.testNetworkArray, 'this new shit');
   }
 
   binarizeTestOutput() {
@@ -558,7 +565,6 @@ export class HomeComponent implements OnInit {
         instance['FIELD11'] = 1
       }
     }
-    console.log(this.yTest, 'this new test array');
   }
 
   binarizeTestInput() {
@@ -573,7 +579,6 @@ export class HomeComponent implements OnInit {
         instance['FIELD9'] = instance['FIELD9'] / 10;
         instance['FIELD10'] = instance['FIELD10'] / 10;
     }
-    console.log(this.xTest, 'this new train array');
   }
 
   ngOnInit() {

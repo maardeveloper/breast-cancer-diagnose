@@ -22,7 +22,6 @@ export class ResultsComponent implements OnInit {
     result['color'] = 'blue';
     result['delay'] = this.calculateDelayResult(currentAnswer);
     result['isOurResult'] = true;
-    console.log('did we?');
     this.arrayWithResults.push(result);
   }
 
