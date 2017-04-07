@@ -4,4 +4,10 @@ body {
   margin: 0px;
   width: 100vw;
   height: 100vh;
+  font-family: RubikRegular;
+}
+
+@font-face {
+    font-family: RubikRegular;
+    src: url('assets/fonts/Rubik-Regular.ttf');
 }
