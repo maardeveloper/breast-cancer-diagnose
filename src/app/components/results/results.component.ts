@@ -11,7 +11,20 @@ export class ResultsComponent implements OnInit {
 
   arrayWithResults = [];
 
+  currentAnswer: any;
+
   constructor() { }
+
+  pushTheResult(currentAnswer) {
+    let result = {};
+    result['x_position'] = this.calculateXPositionResult(currentAnswer);
+    result['y_position'] = this.calculateXPositionResult(currentAnswer);
+    result['color'] = 'blue';
+    result['delay'] = this.calculateDelayResult(currentAnswer);
+    result['isOurResult'] = true;
+    console.log('did we?');
+    this.arrayWithResults.push(result);
+  }
 
   fillTheResultsArray() {
       for(let result of this.testingArray) {
@@ -20,7 +33,6 @@ export class ResultsComponent implements OnInit {
         result['color'] = this.calculateColor(result);
         result['delay'] = this.calculateDelay(result);
         result['isOurResult'] = false;
-        console.log(result);
         this.arrayWithResults.push(result);
       }
   }
@@ -37,6 +49,25 @@ export class ResultsComponent implements OnInit {
   calculateDelay(result) {
     let xposition: number = 0;
     for(let value of result.input) {
+      xposition = xposition + value;
+    }
+    xposition = (xposition/9);
+    return xposition;
+  }
+
+  calculateXPositionResult(result) {
+    let xposition: number = 0;
+    console.log('este input lel', result);
+    for(let value of result) {
+      xposition = xposition + value;
+    }
+    xposition = (xposition/9) * 100;
+    return xposition;
+  }
+
+  calculateDelayResult(result) {
+    let xposition: number = 0;
+    for(let value of result) {
       xposition = xposition + value;
     }
     xposition = (xposition/9);

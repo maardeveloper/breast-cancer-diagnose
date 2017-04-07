@@ -56,3 +56,7 @@
 .resultados > .no-cancer {
   color: green;
 }
+
+.resultados > .resultado {
+  color: blue;
+}
