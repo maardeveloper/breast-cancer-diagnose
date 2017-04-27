@@ -3,7 +3,8 @@ body {
   padding: 0px;
   margin: 0px;
   width: 100vw;
-  height: 100vh;
+  /*height: 100vh;*/
+  overflow-x: hidden;
   font-family: RubikRegular;
 }
 
@@ -13,6 +14,13 @@ body {
 }
 /deep/ .mat-input-underline {
   border-color: #EA80B0 !important;
+}
+
+.vh-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 .submit-button {
   /*border-style: solid;

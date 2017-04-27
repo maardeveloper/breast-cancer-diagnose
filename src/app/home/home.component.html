@@ -1,7 +1,7 @@
 <div class="home">
   <div class="inside-container">
-    <cancer-form *ngIf="!toggleView" (formValue)="activateFormInputs($event);"></cancer-form>
-    <div *ngIf="toggleView" class="answered">
+    <cancer-form class="vh-container" (formValue)="activateFormInputs($event);"></cancer-form>
+    <div class="answered vh-container">
       <div class="description">
         <div class="titulo">
           ~ {{ answer }}
@@ -12,6 +12,6 @@
       </div>
       <button type="button" class="submit-button" name="button" (click)="toggleViewAction();">Repetir prueba</button>
     </div>
-    <results *ngIf="toggleView" #resultsComponent [testingArray]="trainingSet"></results>
+    <results clas="vh-container" #resultsComponent [testingArray]="trainingSet"></results>
   </div>
 </div>
