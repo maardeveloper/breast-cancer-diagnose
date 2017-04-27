@@ -12,6 +12,6 @@
       </div>
       <button type="button" class="submit-button" name="button" (click)="toggleViewAction();">Repetir prueba</button>
     </div>
-    <results #resultsComponent [testingArray]="trainingSet"></results>
+    <results *ngIf="toggleView" #resultsComponent [testingArray]="trainingSet"></results>
   </div>
 </div>
