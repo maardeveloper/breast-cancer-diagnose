@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { CancerResultService } from '../../services/cancer-result.service';
 import { CancerFormService } from '../../services/cancer-form.service';
 
 declare var synaptic: any;
@@ -17,7 +18,7 @@ export class CancerFormComponent implements OnInit {
 
   cancerForm: FormGroup;
 
-  constructor( public fb: FormBuilder ) {
+  constructor( public fb: FormBuilder, private _cancerApi: CancerResultService ) {
     this.cancerForm = fb.group({
       'cT': [null, Validators.required],
       'uCSi': [null, Validators.required],
@@ -50,6 +51,19 @@ export class CancerFormComponent implements OnInit {
     ];
     arrayData = this.binarizeData(arrayData);
     this.formValue.emit(arrayData);
+    let jsonToApi = {
+      'cT': arrayData[0],
+      'uCSi': arrayData[1],
+      'uCSh': arrayData[2],
+      'mA': arrayData[3],
+      'sECS': arrayData[4],
+      'bN': arrayData[5],
+      'bC': arrayData[6],
+      'nN': arrayData[7],
+      'm': arrayData[8]
+    }
+    this._cancerApi.postCancerResult(jsonToApi);
+
   }
 
   ngOnInit() {

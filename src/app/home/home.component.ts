@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NetworkService } from '../services/network.service';
+import { CancerResultService } from '../services/cancer-result.service';
 
 declare var synaptic: any;
 
@@ -45,7 +46,12 @@ export class HomeComponent implements OnInit {
 
   cancerResult:any;
 
-  constructor(private _network: NetworkService) {
+  cancerApiJSON: any;
+
+  constructor(
+    private _network: NetworkService,
+    private _cancerApi: CancerResultService
+  ) {
 
     const TRAINING_SET =
       [
@@ -488,6 +494,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  ngOnInit() {}
+
   doesHasCancer(valueActivated:number) {
     valueActivated > 0.75 ? this.answer = '!!!!!Tienes una alta probabilidad de cancer de mama, ve al doctor!!!!!'
                           : this.answer = 'Tienes una baja probabilidad de cancer de mama, descuida :)';
@@ -513,7 +521,7 @@ export class HomeComponent implements OnInit {
 
   getTestJSON() {
     this._network.getTestData().then((response) => {
-      this.testNetworkArray = response;      
+      this.testNetworkArray = response;
     }).catch((error) => console.log(error));
   }
 
@@ -577,8 +585,4 @@ export class HomeComponent implements OnInit {
         instance['FIELD10'] = instance['FIELD10'] / 10;
     }
   }
-
-  ngOnInit() {
-  }
-
 }
