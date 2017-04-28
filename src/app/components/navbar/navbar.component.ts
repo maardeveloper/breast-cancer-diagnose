@@ -8,6 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Input() toggleView;
+
   constructor() { }
 
   ngOnInit() {
