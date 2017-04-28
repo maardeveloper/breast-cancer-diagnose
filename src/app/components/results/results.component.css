@@ -1,14 +1,15 @@
 .resultsContainer {
-  width: 50vh;
-  height: 50vh;
-  padding: 5vh;
-  background-color: rgba(0,0,0,0.25);
+  width: 300px;
+  height: 300px;
   position: relative;
+  background-color: white;
+  color: #212121;
 }
 
 .isOurResult {
   z-index: 100;
   border: 1px solid lightgray;
+  opacity: 0.75;
 }
 
 .result {
@@ -16,7 +17,6 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  border: 1px dotted lightgray;
 }
 
 .animatedContainer {
@@ -46,8 +46,7 @@
 }
 
 .resultados > .titulo {
-  font-size: 2em;
-  color: white;
+  font-size: 32px;
 }
 .resultados > .cancer {
   color:  red;
