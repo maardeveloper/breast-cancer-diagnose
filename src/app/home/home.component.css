@@ -57,5 +57,9 @@
 }
 
 .toggleView {
-  display: flex;  
+  display: flex;
+}
+
+.hideView {
+  display: none;  
 }
