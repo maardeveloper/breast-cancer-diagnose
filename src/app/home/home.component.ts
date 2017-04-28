@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   outputs = [];
   results:any;
 
+  willPassNeuralNet: any = 'neuralNet';
+
   neuralNet: any;
   trainer: any;
   trainingSet: any;

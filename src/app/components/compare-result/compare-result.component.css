@@ -1,8 +1,8 @@
 .compare-result {
   width: 700px;
   height: 300px;
-  overflow-y: auto;
   background-color: white;
+  overflow-y: auto;
 }
 
 md-card-header {
@@ -18,6 +18,28 @@ md-card-header {
   color: #FFFFFF;
 }
 
-md-card-content {  
-  margin: 50px 0px;
+md-card-content {
+  margin: 50px 0px 50px -300px;
+  width: 700px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.iteration {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #212121;
+}
+
+.iteration-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }

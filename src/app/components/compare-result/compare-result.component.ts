@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CancerResultService } from '../../services/cancer-result.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'compare-result',
@@ -7,11 +9,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CompareResultComponent implements OnInit {
 
-  @Input() neuralNetwork;
+  @Input() willPassNeuralNet;
 
-  constructor() { }
+  resultArray: any;
+
+  constructor(private _cancerResult: CancerResultService) { }
 
   ngOnInit() {
+    this.getAllResults();
+  }
+
+  getAllResults() {
+    this._cancerResult.getAllCancerResult().then((response) => {
+      this.resultArray = response;
+      console.log('REspuesta de respuestas', response);
+    }).catch((error) => console.log(error));
   }
 
 }
