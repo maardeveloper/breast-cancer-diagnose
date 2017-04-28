@@ -1,7 +1,8 @@
+<navbar [toggleView]="toggleView"></navbar>
 <div class="home">
   <div class="inside-container">
     <cancer-form class="vh-container" (formValue)="activateFormInputs($event);"></cancer-form>
-    <div class="result-container vh-container">
+    <div id="result" [ngClass]="{ 'toggleView': toggleView }" class="result-container vh-container">
       <md-card class="answered">
         <div class="description">
           <div class="titulo">

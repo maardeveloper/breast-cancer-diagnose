@@ -39,7 +39,7 @@
 
 .result-container {
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -54,4 +54,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.toggleView {
+  display: flex;  
 }
