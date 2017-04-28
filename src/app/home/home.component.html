@@ -5,14 +5,14 @@
     <div id="result" [ngClass]="{ 'toggleView': toggleView }" class="result-container vh-container">
       <md-card class="answered">
         <div class="description">
-          <div class="titulo">
+          <div class="titulo" [ngClass]="{ 'danger': (cancerPercentage > 0.05)}">
             ~ {{ answer }}
           </div>
           <div class="probabilidad">
             Probabilidad de presentar cancer de mama: {{ cancerPercentage }}
           </div>
         </div>
-        <button md-button type="button" class="submit-button" name="button" (click)="toggleViewAction();">Repetir prueba</button>
+        <button md-button type="button" class="submit-button" name="button" (click)="toggleViewFromRepeat();">Repetir prueba</button>
       </md-card>
       <results clas="vh-container" #resultsComponent [testingArray]="trainingSet"></results>
     </div>

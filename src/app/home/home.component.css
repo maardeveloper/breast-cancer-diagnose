@@ -61,5 +61,10 @@
 }
 
 .hideView {
-  display: none;  
+  display: none;
+}
+
+.danger {
+  font-weight: bold;
+  color: red;
 }

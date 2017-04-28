@@ -509,6 +509,11 @@ export class HomeComponent implements OnInit {
     this.toggleView = !this.toggleView;
   }
 
+  toggleViewFromRepeat() {
+    this.toggleViewAction();
+    this.popFromResult();
+  }
+
   activateFormInputs(formValues) {
     this.cancerResult = this.neuralNet.activate(formValues);
     this.resultsComponent.pushTheResult(formValues);
@@ -586,5 +591,9 @@ export class HomeComponent implements OnInit {
         instance['FIELD9'] = instance['FIELD9'] / 10;
         instance['FIELD10'] = instance['FIELD10'] / 10;
     }
+  }
+
+  popFromResult() {
+    this.resultsComponent.popLastEntry();
   }
 }
