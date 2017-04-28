@@ -1,25 +1,51 @@
-<div class="cancer-form">
-  <div class="title">Ingrese sus datos</div>
-  <span style="color: white">Valores del 1 al 10 según su examen.</span>
-  <form #f="ngForm" (ngSubmit)="submitForm()" [formGroup]="cancerForm"  class="cancerForm">
-    <input [(ngModel)]="cancerForm.cT" type="number" [formControl]="cancerForm.controls['cT']"
-    placeholder="Espesor de macizo" name="cT">
-    <input [(ngModel)]="cancerForm.uCSi" type="number" [formControl]="cancerForm.controls['uCSi']"
-    placeholder="Uniformidad de tamaños de células" name="uCSi">
-    <input [(ngModel)]="cancerForm.uCSh" type="number" [formControl]="cancerForm.controls['uCSh']"
-    placeholder="Uniformidad de la forma de las células" name="uCSh">
-    <input [(ngModel)]="cancerForm.mA" type="number" [formControl]="cancerForm.controls['mA']"
-    placeholder="Adhesión marginal" name="mA">
-    <input [(ngModel)]="cancerForm.sECS" type="number" [formControl]="cancerForm.controls['sECS']"
-    placeholder="Tamaño de célula epitelial única" name="sECS">
-    <input [(ngModel)]="cancerForm.bN" type="number" [formControl]="cancerForm.controls['bN']"
-    placeholder="Núcleos desnudos" name="bN">
-    <input [(ngModel)]="cancerForm.bC" type="number" [formControl]="cancerForm.controls['bC']"
-    placeholder="Cromatina suave" name="bC">
-    <input [(ngModel)]="cancerForm.nN" type="number" [formControl]="cancerForm.controls['nN']"
-    placeholder="Normal Nucleoli" name="nN">
-    <input [(ngModel)]="cancerForm.m" type="number" [formControl]="cancerForm.controls['m']"
-    placeholder="Mitosis" name="m">
-    <button [disabled]="!cancerForm.valid" type="submit" name="button" class="submit-button">Go!</button>
-  </form>
-</div>
+<md-card class="cancer-form">
+  <md-card-header>
+    <md-card-title class="title">Ingrese sus datos</md-card-title>
+    <md-card-subtitle class="subtitle">Valores del 1 al 10 según su examen.</md-card-subtitle>
+  </md-card-header>
+    <form #f="ngForm" (ngSubmit)="submitForm()" [formGroup]="cancerForm"  class="cancerForm">
+      <md-card-content>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.cT" type="number" [formControl]="cancerForm.controls['cT']"
+          placeholder="Espesor de macizo" name="cT">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.uCSi" type="number" [formControl]="cancerForm.controls['uCSi']"
+          placeholder="Uniformidad de tamaños de células" name="uCSi">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.uCSh" type="number" [formControl]="cancerForm.controls['uCSh']"
+          placeholder="Uniformidad de la forma de las células" name="uCSh">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.mA" type="number" [formControl]="cancerForm.controls['mA']"
+          placeholder="Adhesión marginal" name="mA">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.sECS" type="number" [formControl]="cancerForm.controls['sECS']"
+          placeholder="Tamaño de célula epitelial única" name="sECS">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.bN" type="number" [formControl]="cancerForm.controls['bN']"
+          placeholder="Núcleos desnudos" name="bN">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.bC" type="number" [formControl]="cancerForm.controls['bC']"
+          placeholder="Cromatina suave" name="bC">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.nN" type="number" [formControl]="cancerForm.controls['nN']"
+          placeholder="Normal Nucleoli" name="nN">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput [(ngModel)]="cancerForm.m" type="number" [formControl]="cancerForm.controls['m']"
+          placeholder="Mitosis" name="m">
+        </md-input-container>
+      </md-card-content>
+      <md-card-footer>
+        <md-card-actions>
+          <button md-button [disabled]="!cancerForm.valid" type="submit" name="button" class="submit-button">Go!</button>
+        </md-card-actions>
+      </md-card-footer>
+    </form>
+</md-card>

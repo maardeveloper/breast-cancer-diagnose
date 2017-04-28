@@ -1,25 +1,30 @@
 .home{
   width: 100vw;
-  height: 100vh;
-  background-image: url(/assets/images/hospital_background.jpg);
+  overflow-x: hidden;
+  /*background-image: url(/assets/images/hospital_background.jpg);
   background-position: center;
-  background-size: cover;
-  -webkit-box-shadow: inset 0px -200px 189px 16px rgba(0,0,0,0.75);
+  background-size: cover;*/
+  background-color: white;
+  /*-webkit-box-shadow: inset 0px -200px 189px 16px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px -200px 189px 16px rgba(0,0,0,0.75);
-  box-shadow: inset 0px -200px 189px 16px rgba(0,0,0,0.75);
+  box-shadow: inset 0px -200px 189px 16px rgba(0,0,0,0.75);*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .description {
-  width: 50%;
-  background-color: rgba(0,0,0,0.25);
-  color: white;
+  /*width: 50%;  */
 }
 
 .description > .titulo {
-  font-size: 2em;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.description > .probabilidad {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .inside-container {
@@ -27,7 +32,26 @@
   height: 100%;
   background-color: rgba(234,128,176,0.25);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+.result-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.answered {
+  width: 300px;
+  background-color: white;
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

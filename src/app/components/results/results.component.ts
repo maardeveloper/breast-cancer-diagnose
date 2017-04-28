@@ -1,5 +1,4 @@
 import { Component, OnInit , Input } from '@angular/core';
-import { CancerResultService } from '../../services/cancer-result.service';
 
 @Component({
   selector: 'results',
@@ -16,7 +15,7 @@ export class ResultsComponent implements OnInit {
 
   cancerApiJSON:any;
 
-  constructor(private _cancerApi: CancerResultService) { }
+  constructor() { }
 
   pushTheResult(currentAnswer) {
     let result = {};
@@ -87,14 +86,11 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.fillTheResultsArray();
-    this.getAllCancerResult();
   }
 
-  getAllCancerResult() {
-    this._cancerApi.getAllCancerResult().then(response =>  {
-      this.cancerApiJSON = response;
-      console.log(response, '========Super response de api====');
-    }).catch(error => console.log(error));
+  popLastEntry() {
+    this.arrayWithResults.pop();
   }
+
 
 }

@@ -1,17 +1,19 @@
 <div class="home">
   <div class="inside-container">
-    <cancer-form *ngIf="!toggleView" (formValue)="activateFormInputs($event);"></cancer-form>
-    <div *ngIf="toggleView" class="answered">
-      <div class="description">
-        <div class="titulo">
-          ~ {{ answer }}
+    <cancer-form class="vh-container" (formValue)="activateFormInputs($event);"></cancer-form>
+    <div class="result-container vh-container">
+      <md-card class="answered">
+        <div class="description">
+          <div class="titulo">
+            ~ {{ answer }}
+          </div>
+          <div class="probabilidad">
+            Probabilidad de presentar cancer de mama: {{ cancerPercentage }}
+          </div>
         </div>
-        <div class="probabilidad">
-          Probabilidad de presentar cancer de mama: {{ cancerPercentage }}
-        </div>
-      </div>
-      <button type="button" class="submit-button" name="button" (click)="toggleViewAction();">Repetir prueba</button>
+        <button md-button type="button" class="submit-button" name="button" (click)="toggleViewAction();">Repetir prueba</button>
+      </md-card>
+      <results clas="vh-container" #resultsComponent [testingArray]="trainingSet"></results>
     </div>
-    <results #resultsComponent [testingArray]="trainingSet"></results>
   </div>
 </div>

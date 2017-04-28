@@ -1,4 +1,4 @@
-<div class="resultsContainer" *ngIf="arrayWithResults">
+<md-card class="resultsContainer" *ngIf="arrayWithResults">
   <div class="result animatedContainer" *ngFor="let result of arrayWithResults"
     [style.left.px]="result['x_position']"
     [style.bottom.px]="result['y_position']"
@@ -13,4 +13,4 @@
     <span class="no-cancer">No cancer</span>
     <span class="resultado">Tu resultado</span>
   </div>
-</div>
+</md-card>
