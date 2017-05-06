@@ -3,7 +3,7 @@
   <div class="inside-container">
     <cancer-form [ngClass]="{ 'hideView': toggleView }" class="vh-container" (formValue)="activateFormInputs($event);"></cancer-form>
     <div id="result" [ngClass]="{ 'toggleView': toggleView }" class="result-container vh-container">
-      <md-card class="answered">
+      <md-card class="answered  animated bounceInDown ">
         <div class="description">
           <div class="titulo" [ngClass]="{ 'danger': (cancerPercentage > 0.05)}">
             ~ {{ answer }}
