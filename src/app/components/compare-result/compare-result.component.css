@@ -1,8 +1,10 @@
-.cancer-form {
+.compare-result {
+  width: 700px;
+  height: 300px;
   background-color: white;
-  width: 750px;
-  height: auto;
+  overflow-y: auto;
 }
+
 md-card-header {
   position: absolute;
   width: 100%;
@@ -10,41 +12,34 @@ md-card-header {
   top: 0;
   left: 0;
   background: #EA80B0;
-  margin-top: -4px !important;
 }
 .title {
   font-size: 32px !important;
   color: #FFFFFF;
 }
-.subtitle {
-  font-size: 14px !important;
-  color: #757575;
-}
-
-.cancerForm {
-  display: flex;
-  flex-direction: column;
-}
-
-.submit-button[disabled] {
-  background-color: #9E9E9E;
-}
 
 md-card-content {
+  margin: 50px 0px 50px -300px;
+  width: 700px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.iteration {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 50px 0px;
+  align-items: center;
+  border-bottom: 1px solid #212121;
 }
 
-md-input-container {
-  margin: 0px 5px;
-  color: #212121;
-}
-
-md-card-actions {
+.iteration-item {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-self: center;
 }

@@ -11,6 +11,10 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
+  alertTeam() {
+    alert('Jorge, Roli, Mario, Peps');
+  }
+
   ngOnInit() {
   }
 

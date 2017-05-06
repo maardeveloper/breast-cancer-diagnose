@@ -1,0 +1,77 @@
+<md-card class="compare-result">
+  <md-card-header>
+    <md-card-title class="title">Comparar Resultados</md-card-title>
+    <md-card-content>
+      <div class="iteration">
+        <div class="iteration-item">
+          id
+        </div>
+        <div class="iteration-item">
+          bC
+        </div>
+        <div class="iteration-item">
+          bN
+        </div>
+        <div class="iteration-item">
+          cT
+        </div>
+        <div class="iteration-item">
+          m
+        </div>
+        <div class="iteration-item">
+          mA
+        </div>
+        <div class="iteration-item">
+          nN
+        </div>
+        <div class="iteration-item">
+          sECS
+        </div>
+        <div class="iteration-item">
+          uCSh
+        </div>
+        <div class="iteration-item">
+          uCSi
+        </div>
+        <div class="iteration-item">
+          resultado
+        </div>
+      </div>
+      <div *ngFor="let result of resultArray" class="iteration">
+        <div class="iteration-item">
+          {{result.id}}
+        </div>
+        <div class="iteration-item">
+          {{result.bC}}
+        </div>
+        <div class="iteration-item">
+          {{result.bN}}
+        </div>
+        <div class="iteration-item">
+          {{result.cT}}
+        </div>
+        <div class="iteration-item">
+          {{result.m}}
+        </div>
+        <div class="iteration-item">
+          {{result.mA}}
+        </div>
+        <div class="iteration-item">
+          {{result.nN}}
+        </div>
+        <div class="iteration-item">
+          {{result.sECS}}
+        </div>
+        <div class="iteration-item">
+          {{result.uCSh}}
+        </div>
+        <div class="iteration-item">
+          {{result.uCSi}}
+        </div>
+        <div class="iteration-item">
+          resultado
+        </div>
+      </div>
+    </md-card-content>
+  </md-card-header>
+</md-card>
