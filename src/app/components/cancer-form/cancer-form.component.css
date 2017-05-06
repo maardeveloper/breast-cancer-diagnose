@@ -1,0 +1,77 @@
+.cancer-form {
+  background-color: white;
+  width: 750px;
+  height: auto;
+}
+md-card-header {
+  position: absolute;
+  width: 100%;
+  min-height: 5px;
+  top: 0;
+  left: 0;
+  background: #EA80B0;
+  margin-top: -4px !important;
+}
+.title {
+  font-size: 32px !important;
+  color: #FFFFFF;
+}
+.subtitle {
+  font-size: 14px !important;
+  color: #757575;
+}
+
+.cancerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-button[disabled] {
+  background-color: #9E9E9E;
+}
+
+md-card-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px 0px;
+}
+
+md-input-container {
+  margin: 0px 5px;
+  color: #212121;
+}
+
+md-card-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  animation-name: shake;
+}

@@ -1,0 +1,45 @@
+.compare-result {
+  width: 700px;
+  height: 300px;
+  background-color: white;
+  overflow-y: auto;
+}
+
+md-card-header {
+  position: absolute;
+  width: 100%;
+  min-height: 5px;
+  top: 0;
+  left: 0;
+  background: #EA80B0;
+}
+.title {
+  font-size: 32px !important;
+  color: #FFFFFF;
+}
+
+md-card-content {
+  margin: 50px 0px 50px -300px;
+  width: 700px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.iteration {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #212121;
+}
+
+.iteration-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}

@@ -1,0 +1,21 @@
+<navbar [toggleView]="toggleView"></navbar>
+<div class="home">
+  <div class="inside-container">
+    <cancer-form [ngClass]="{ 'hideView': toggleView }" class="vh-container" (formValue)="activateFormInputs($event);"></cancer-form>
+    <div id="result" [ngClass]="{ 'toggleView': toggleView }" class="result-container vh-container">
+      <md-card class="answered  animated bounceInDown ">
+        <div class="description">
+          <div class="titulo" [ngClass]="{ 'danger': (cancerPercentage > 0.05)}">
+            ~ {{ answer }}
+          </div>
+          <div class="probabilidad">
+            Probabilidad de presentar cancer de mama: {{ cancerPercentage }}
+          </div>
+        </div>
+        <button md-button type="button" class="submit-button" name="button" (click)="toggleViewFromRepeat();">Repetir prueba</button>
+      </md-card>
+      <results clas="vh-container" #resultsComponent [testingArray]="trainingSet"></results>
+    </div>
+    <!-- <compare-result class="vh-container"></compare-result> -->
+  </div>
+</div>

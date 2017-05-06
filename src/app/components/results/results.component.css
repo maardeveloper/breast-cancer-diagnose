@@ -1,0 +1,61 @@
+.resultsContainer {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: white;
+  color: #212121;
+}
+
+.isOurResult {
+  z-index: 100;
+  border: 1px solid lightgray;
+  opacity: 0.75;
+}
+
+.result {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.animatedContainer {
+  animation: animateContainer 10s infinite;
+}
+@keyframes animateContainer {
+  0%   {
+    padding: 10px;
+    height: 20px;
+    width: 20px;
+ }
+  50% {
+    padding: 0px;
+    height: 10px;
+    width: 10px;
+  }
+  100% {
+    padding: 10px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.resultados {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultados > .titulo {
+  font-size: 32px;
+}
+.resultados > .cancer {
+  color:  red;
+}
+
+.resultados > .no-cancer {
+  color: green;
+}
+
+.resultados > .resultado {
+  color: blue;
+}
