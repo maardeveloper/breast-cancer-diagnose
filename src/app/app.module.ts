@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
-import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -34,7 +33,6 @@ import { AppComponent } from './app.component';
     ReactiveFormsModule,
     HttpModule,
     MaterialModule,
-    Ng2PageScrollModule.forRoot()
   ],
   providers: [CancerResultService],
   bootstrap: [AppComponent]
