@@ -10,7 +10,7 @@ declare var synaptic: any;
 @Component({
   selector: 'cancer-form',
   templateUrl: './cancer-form.component.html',
-  providers: [ CancerFormService, PageScrollService ],
+  providers: [ CancerFormService],
   styleUrls: ['./cancer-form.component.css']
 })
 export class CancerFormComponent implements OnInit {
@@ -20,7 +20,6 @@ export class CancerFormComponent implements OnInit {
   cancerForm: FormGroup;
 
   constructor(
-    private _scroll: PageScrollService,
     public fb: FormBuilder,
     private _cancerApi: CancerResultService,
     @Inject(DOCUMENT) private document: any ) {
@@ -73,8 +72,7 @@ export class CancerFormComponent implements OnInit {
   }
 
   goNextSection() {
-    let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, '#result');
-    this._scroll.start(pageScrollInstance);
+    console.log('scrolled');
   }
 
   ngOnInit() {
