@@ -4,15 +4,21 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve && node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build && angular-cli-ghpages --branch master"
+    "deploy": "ng build && angular-cli-ghpages --branch master",
+    "postinstall": "ng build --aot"
   },
   "private": true,
+  "engines": {
+    "node": "7.4.0",
+    "npm": "4.0.5"
+  },
   "dependencies": {
+    "@angular/cli": "1.0.0-rc.0",
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",
@@ -23,6 +29,7 @@
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.2",
     "rxjs": "^5.1.0",
     "synaptic": "^1.0.10",
     "zone.js": "^0.7.6"
