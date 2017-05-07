@@ -2,8 +2,6 @@ import { Component, OnInit, Output, EventEmitter, ElementRef, Inject } from '@an
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DOCUMENT } from '@angular/platform-browser';
 
-import { PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
-
 import { CancerResultService } from '../../services/cancer-result.service';
 import { CancerFormService } from '../../services/cancer-form.service';
 
